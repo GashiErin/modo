@@ -1,3 +1,11 @@
+# MODO gastro concept
+
+Restaurant website for MODO gastro concept in Prishtina, customized from the Grilli template below.
+
+Open `index.html` to preview locally, or run `py -m http.server 8000 --bind 0.0.0.0` from this folder.
+
+## Original Template
+
 <div align="center">
   
   ![GitHub repo size](https://img.shields.io/github/repo-size/codewithsadee/grilli)
