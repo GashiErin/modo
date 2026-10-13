@@ -1081,78 +1081,153 @@ body.nav-active { overflow: hidden; }
   #MENU
 \*-----------------------------------*/
 
-.menu .section-title { margin-block-end: 40px; }
+#menu { scroll-margin-top: 140px; }
 
-.menu .grid-list { margin-block-end: 50px; }
+.menu .section-title { margin-block-end: 32px; }
 
-.menu-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
+.menu-tabs { display: none; }
+
+.menu.is-enhanced .menu-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 640px;
+  margin: 0 auto 40px;
+  border-block-end: 1px solid var(--white-alpha-20);
 }
 
-.hover\:card .card-banner { background-color: var(--gold-crayola); }
-
-.hover\:card .card-banner .img-cover { transition: var(--transition-2); }
-
-.hover\:card:is(:hover, :focus-within) .card-banner .img-cover {
-  opacity: 0.7;
-  transform: scale(1.05);
-}
-
-.menu-card .card-banner {
-  flex-shrink: 0;
-  border-radius: var(--radius-24);
-}
-
-.menu-card .card-title { transition: var(--transition-1); }
-
-.menu-card .card-title:is(:hover, :focus-visible) { color: var(--gold-crayola); }
-
-.menu-card .badge {
-  background-color: var(--gold-crayola);
-  color: var(--eerie-black-1);
-  font-family: var(--fontFamily-forum);
-  max-width: max-content;
-  line-height: var(--lineHeight-6);
-  text-transform: uppercase;
-  padding-inline: 10px;
-  margin-block-start: 10px;
-}
-
-.menu-card .span {
-  color: var(--gold-crayola);
-  margin-block: 10px;
-}
-
-.menu-card .card-text {
+.menu-tab {
+  min-width: 0;
+  min-height: 52px;
+  padding: 12px 4px;
+  border-block-end: 3px solid transparent;
   color: var(--quick-silver);
-  line-height: var(--lineHeight-4);
+  font-size: 13px;
+  transition: var(--transition-1);
 }
 
-.menu-text .span {
-  display: inline-block;
-  color: var(--gold-crayola);
+.menu-tab[aria-selected="true"] {
+  border-color: var(--brand-cream);
+  background-color: var(--brand-teal);
+  color: var(--brand-cream);
 }
 
-.menu .btn {
-  margin-inline: auto;
-  margin-block-start: 26px;
+.menu-tab:is(:hover, :focus-visible) { color: var(--brand-cream); }
+
+.menu-tab:focus-visible,
+.menu-panel:focus-visible,
+.menu-sheet:focus-visible {
+  outline: 2px solid var(--brand-cream);
+  outline-offset: 4px;
 }
 
-.menu .shape {
-  display: block;
-  width: 70%;
+.menu-panel {
+  display: grid;
+  gap: 32px;
+  padding-block: 20px;
+  margin-block-end: 36px;
 }
 
-.menu .shape-2 {
-  top: 0;
-  left: 0;
+.menu-panel[hidden] { display: none; }
+
+.menu-category { min-width: 0; }
+
+.menu-category-heading { margin-block-end: 24px; }
+
+.menu-category-heading .title-1 {
+  font-size: 32px;
+  color: var(--brand-cream);
 }
 
-.menu .shape-3 {
-  bottom: 0;
-  right: 0;
+.menu-option {
+  margin-block-start: 4px;
+  color: var(--quick-silver);
+  font-size: 14px;
+}
+
+.menu-dishes {
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+
+.menu-dish {
+  min-width: 0;
+  padding-block-end: 20px;
+  border-block-end: 1px solid var(--white-alpha-10);
+}
+
+.menu-dish-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.menu-dish-name {
+  font-family: var(--fontFamily-forum);
+  font-size: 24px;
+  font-weight: var(--weight-regular);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.menu-price {
+  color: var(--brand-cream);
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.menu-ingredients {
+  margin-block-start: 8px;
+  color: var(--quick-silver);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.menu-sheet {
+  align-self: start;
+  color: var(--brand-cream);
+}
+
+.menu-sheet img {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+.menu-sheet span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 12px;
+  font-size: 14px;
+}
+
+.menu-sheet ion-icon { font-size: 18px; }
+
+.menu-sheet:hover span { text-decoration: underline; }
+
+@media (min-width: 768px) {
+  .menu-tab { font-size: 16px; }
+
+  .menu-panel {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    align-items: start;
+    gap: 40px;
+    min-height: 540px;
+  }
+
+  .menu-sheet img { display: block; }
+}
+
+@media (min-width: 1200px) {
+  .menu-panel { grid-template-columns: minmax(0, 1fr) 300px; }
+
+  .menu-dishes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 36px;
+  }
 }
 
 

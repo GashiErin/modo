@@ -46,6 +46,52 @@ const toggleNavbar = function () {
 addEventOnElements(navTogglers, "click", toggleNavbar);
 
 
+/**
+ * MENU CATEGORIES
+ */
+
+const menu = document.querySelector("[data-menu]");
+
+if (menu) {
+  const menuTabs = Array.from(menu.querySelectorAll('[role="tab"]'));
+  const menuPanels = menu.querySelectorAll('[role="tabpanel"]');
+
+  const selectMenuTab = function (selectedTab) {
+    menuTabs.forEach(function (tab) {
+      const selected = tab === selectedTab;
+      tab.setAttribute("aria-selected", String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    });
+
+    menuPanels.forEach(function (panel) {
+      panel.hidden = panel.id !== selectedTab.getAttribute("aria-controls");
+    });
+  };
+
+  menuTabs.forEach(function (tab, index) {
+    tab.addEventListener("click", function () {
+      selectMenuTab(tab);
+    });
+
+    tab.addEventListener("keydown", function (event) {
+      let nextIndex;
+      if (event.key === "ArrowRight") nextIndex = (index + 1) % menuTabs.length;
+      else if (event.key === "ArrowLeft") nextIndex = (index - 1 + menuTabs.length) % menuTabs.length;
+      else if (event.key === "Home") nextIndex = 0;
+      else if (event.key === "End") nextIndex = menuTabs.length - 1;
+      else return;
+
+      event.preventDefault();
+      selectMenuTab(menuTabs[nextIndex]);
+      menuTabs[nextIndex].focus();
+    });
+  });
+
+  selectMenuTab(menuTabs[0]);
+  menu.classList.add("is-enhanced");
+}
+
+
 
 /**
  * HEADER & BACK TOP BTN

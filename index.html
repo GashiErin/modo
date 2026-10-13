@@ -35,7 +35,6 @@
     - preload images
   -->
   <link rel="preload" as="image" href="./assets/images/Hamburger.jfif">
-  <link rel="preload" as="image" href="./assets/images/hero-slider-1.jpg">
   <link rel="preload" as="image" href="./assets/images/Pica.jfif">
   <link rel="preload" as="image" href="./assets/images/maki1.jfif">
 
@@ -238,31 +237,6 @@
 
             <div class="slider-bg">
               <img src="./assets/images/Hamburger.jfif" width="1880" height="950" alt="" class="img-cover">
-            </div>
-
-            <p class="label-2 section-subtitle slider-reveal">Tradational & Hygine</p>
-
-            <h1 class="display-1 hero-title slider-reveal">
-              For the love of <br>
-              delicious food
-            </h1>
-
-            <p class="body-2 hero-text slider-reveal">
-              Come with family & feel the joy of mouthwatering food
-            </p>
-
-            <a href="#menu" class="btn btn-primary slider-reveal">
-              <span class="text text-1">View Our Menu</span>
-
-              <span class="text text-2" aria-hidden="true">View Our Menu</span>
-            </a>
-
-          </li>
-
-          <li class="slider-item" data-hero-slider-item>
-
-            <div class="slider-bg">
-              <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt="" class="img-cover">
             </div>
 
             <p class="label-2 section-subtitle slider-reveal">Tradational & Hygine</p>
@@ -567,197 +541,245 @@
         - #MENU
       -->
 
-      <section class="section menu" aria-label="menu-label" id="menu">
+      <section class="section menu" aria-labelledby="menu-title" id="menu" data-menu>
         <div class="container">
 
-          <p class="section-subtitle text-center label-2">Special Selection</p>
+          <p class="section-subtitle text-center label-2">MODO gastro concept</p>
+          <h2 class="headline-1 section-title text-center" id="menu-title">Our Menu</h2>
 
-          <h2 class="headline-1 section-title text-center">Delicious Menu</h2>
+          <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+            <button type="button" class="menu-tab" id="tab-pizza" role="tab" aria-controls="menu-pizza"
+              aria-selected="true" tabindex="0">Pizza</button>
+            <button type="button" class="menu-tab" id="tab-pasta" role="tab" aria-controls="menu-pasta"
+              aria-selected="false" tabindex="-1">Pasta</button>
+            <button type="button" class="menu-tab" id="tab-sandwiches" role="tab" aria-controls="menu-sandwiches"
+              aria-selected="false" tabindex="-1">Sandwiches</button>
+            <button type="button" class="menu-tab" id="tab-burgers" role="tab" aria-controls="menu-burgers"
+              aria-selected="false" tabindex="-1">Burgers</button>
+          </div>
 
-          <ul class="grid-list">
-
-            <li>
-              <div class="menu-card hover:card">
-
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-1.png" width="100" height="100" loading="lazy" alt="Greek Salad"
-                    class="img-cover">
-                </figure>
-
-                <div>
-
-                  <div class="title-wrapper">
-                    <h3 class="title-3">
-                      <a href="#" class="card-title">Greek Salad</a>
-                    </h3>
-
-                    <span class="badge label-1">Seasonal</span>
-
-                    <span class="span title-2">$25.50</span>
-                  </div>
-
-                  <p class="card-text label-1">
-                    Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.
-                  </p>
-
-                </div>
-
+          <div class="menu-panel" id="menu-pizza" role="tabpanel" aria-labelledby="tab-pizza" tabindex="0">
+            <div class="menu-category">
+              <div class="menu-category-heading">
+                <h3 class="title-1">Pizza</h3>
               </div>
-            </li>
 
-            <li>
-              <div class="menu-card hover:card">
-
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-2.png" width="100" height="100" loading="lazy" alt="Lasagne"
-                    class="img-cover">
-                </figure>
-
-                <div>
-
-                  <div class="title-wrapper">
-                    <h3 class="title-3">
-                      <a href="#" class="card-title">Lasagne</a>
-                    </h3>
-
-                    <span class="span title-2">$40.00</span>
+              <ul class="menu-dishes">
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Margherita</h4>
+                    <span class="menu-price">4.00 &euro;</span>
                   </div>
-
-                  <p class="card-text label-1">
-                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices
-                  </p>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="menu-card hover:card">
-
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-3.png" width="100" height="100" loading="lazy" alt="Butternut Pumpkin"
-                    class="img-cover">
-                </figure>
-
-                <div>
-
-                  <div class="title-wrapper">
-                    <h3 class="title-3">
-                      <a href="#" class="card-title">Butternut Pumpkin</a>
-                    </h3>
-
-                    <span class="span title-2">$10.00</span>
+                  <p class="menu-ingredients">Marinara sauce, edam cheese, parmesan cheese, olive oil</p>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Prosciutto</h4>
+                    <span class="menu-price">4.50 &euro;</span>
                   </div>
-
-                  <p class="card-text label-1">
-                    Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.
-                  </p>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="menu-card hover:card">
-
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-4.png" width="100" height="100" loading="lazy" alt="Tokusen Wagyu"
-                    class="img-cover">
-                </figure>
-
-                <div>
-
-                  <div class="title-wrapper">
-                    <h3 class="title-3">
-                      <a href="#" class="card-title">Tokusen Wagyu</a>
-                    </h3>
-
-                    <span class="badge label-1">New</span>
-
-                    <span class="span title-2">$39.00</span>
+                  <p class="menu-ingredients">Marinara sauce, edam cheese, parmesan cheese, prosciutto</p>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Capriciosa</h4>
+                    <span class="menu-price">5.00 &euro;</span>
                   </div>
-
-                  <p class="card-text label-1">
-                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.
-                  </p>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="menu-card hover:card">
-
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-5.png" width="100" height="100" loading="lazy" alt="Olivas Rellenas"
-                    class="img-cover">
-                </figure>
-
-                <div>
-
-                  <div class="title-wrapper">
-                    <h3 class="title-3">
-                      <a href="#" class="card-title">Olivas Rellenas</a>
-                    </h3>
-
-                    <span class="span title-2">$25.00</span>
+                  <p class="menu-ingredients">Marinara sauce, edam cheese, parmesan cheese, prosciutto, mushrooms, olives</p>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Quattro stagioni</h4>
+                    <span class="menu-price">5.50 &euro;</span>
                   </div>
-
-                  <p class="card-text label-1">
-                    Avocados with crab meat, red onion, crab salad stuffed red bell pepper and green bell pepper.
-                  </p>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="menu-card hover:card">
-
-                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
-                  <img src="./assets/images/menu-6.png" width="100" height="100" loading="lazy" alt="Opu Fish"
-                    class="img-cover">
-                </figure>
-
-                <div>
-
-                  <div class="title-wrapper">
-                    <h3 class="title-3">
-                      <a href="#" class="card-title">Opu Fish</a>
-                    </h3>
-
-                    <span class="span title-2">$49.00</span>
+                  <p class="menu-ingredients">Marinara sauce, edam cheese, parmesan cheese, prosciutto, mushrooms, olives, tonno</p>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Diavola</h4>
+                    <span class="menu-price">5.00 &euro;</span>
                   </div>
+                  <p class="menu-ingredients">Marinara sauce, edam cheese, parmesan cheese, pepperoni, chili oil, olives</p>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Tonno</h4>
+                    <span class="menu-price">5.00 &euro;</span>
+                  </div>
+                  <p class="menu-ingredients">Marinara sauce, edam cheese, parmesan cheese, canned tuna, red onions</p>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Alle verdure</h4>
+                    <span class="menu-price">4.50 &euro;</span>
+                  </div>
+                  <p class="menu-ingredients">Marinara sauce, edam cheese, parmesan cheese, mushrooms, olives, red bell pepper, garlic powder</p>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">MODO</h4>
+                    <span class="menu-price">5.50 &euro;</span>
+                  </div>
+                  <p class="menu-ingredients">Marinara sauce, edam cheese, parmesan cheese, prosciutto, pepperoni, mushrooms, olives</p>
+                </li>
+              </ul>
+            </div>
 
-                  <p class="card-text label-1">
-                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices
-                  </p>
+            <a class="menu-sheet" href="./assets/images/Fleta1.jpeg" target="_blank" rel="noopener"
+              aria-label="Open the original pizza menu at full size">
+              <img src="./assets/images/Fleta1.jpeg" width="1290" height="2294" loading="lazy"
+                alt="MODO printed pizza menu with prices in euros">
+              <span>Printed menu <ion-icon name="open-outline" aria-hidden="true"></ion-icon></span>
+            </a>
+          </div>
 
-                </div>
-
+          <div class="menu-panel" id="menu-pasta" role="tabpanel" aria-labelledby="tab-pasta" tabindex="0">
+            <div class="menu-category">
+              <div class="menu-category-heading">
+                <h3 class="title-1">Pasta</h3>
+                <p class="menu-option">Penne / Linguine</p>
               </div>
-            </li>
 
-          </ul>
+              <ul class="menu-dishes">
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Bolognese</h4>
+                    <span class="menu-price">4.00 &euro;</span>
+                  </div>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Arrabbiata</h4>
+                    <span class="menu-price">3.50 &euro;</span>
+                  </div>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Napolitan</h4>
+                    <span class="menu-price">3.50 &euro;</span>
+                  </div>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Carbonara</h4>
+                    <span class="menu-price">4.00 &euro;</span>
+                  </div>
+                  <p class="menu-ingredients">Prosciutto, cream sauce, egg yolk, parmesan, garlic</p>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Rosso bianca</h4>
+                    <span class="menu-price">4.00 &euro;</span>
+                  </div>
+                  <p class="menu-ingredients">Chicken, onions, mushrooms, garlic, cream sauce, Napoli sauce</p>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Bufala al pomodorino</h4>
+                    <span class="menu-price">4.50 &euro;</span>
+                  </div>
+                  <p class="menu-ingredients">Cherry tomatoes, Napoli sauce, buffalo mozzarella, garlic</p>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Lasagna</h4>
+                    <span class="menu-price">5.00 &euro;</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-          <p class="menu-text text-center">
-            During winter daily from <span class="span">7:00 pm</span> to <span class="span">9:00 pm</span>
-          </p>
+            <a class="menu-sheet" href="./assets/images/Fleta2.jpeg" target="_blank" rel="noopener"
+              aria-label="Open the original pasta menu at full size">
+              <img src="./assets/images/Fleta2.jpeg" width="1290" height="2290" loading="lazy"
+                alt="MODO printed pasta menu with prices in euros">
+              <span>Printed menu <ion-icon name="open-outline" aria-hidden="true"></ion-icon></span>
+            </a>
+          </div>
 
-          <a href="#menu" class="btn btn-primary">
-            <span class="text text-1">View All Menu</span>
+          <div class="menu-panel" id="menu-sandwiches" role="tabpanel" aria-labelledby="tab-sandwiches" tabindex="0">
+            <div class="menu-category">
+              <div class="menu-category-heading">
+                <h3 class="title-1">Sandwiches</h3>
+                <p class="menu-option">Baguette / Ciabatta</p>
+              </div>
 
-            <span class="text text-2" aria-hidden="true">View All Menu</span>
-          </a>
+              <ul class="menu-dishes">
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Prosciutto sandwich</h4>
+                    <span class="menu-price">3.00 &euro;</span>
+                  </div>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Chicken sandwich</h4>
+                    <span class="menu-price">3.50 &euro;</span>
+                  </div>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Tonno mexican</h4>
+                    <span class="menu-price">3.80 &euro;</span>
+                  </div>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">MODO sandwich</h4>
+                    <span class="menu-price">4.50 &euro;</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
 
-          <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
-            class="shape shape-2 move-anim">
-          <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
-            class="shape shape-3 move-anim">
+            <a class="menu-sheet" href="./assets/images/Fleta3.jpeg" target="_blank" rel="noopener"
+              aria-label="Open the original sandwiches menu at full size">
+              <img src="./assets/images/Fleta3.jpeg" width="1290" height="2294" loading="lazy"
+                alt="MODO printed sandwiches menu with prices in euros">
+              <span>Printed menu <ion-icon name="open-outline" aria-hidden="true"></ion-icon></span>
+            </a>
+          </div>
+
+          <div class="menu-panel" id="menu-burgers" role="tabpanel" aria-labelledby="tab-burgers" tabindex="0">
+            <div class="menu-category">
+              <div class="menu-category-heading">
+                <h3 class="title-1">Burgers</h3>
+              </div>
+
+              <ul class="menu-dishes">
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Clasico burger</h4>
+                    <span class="menu-price">3.00 &euro;</span>
+                  </div>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Cheese burger</h4>
+                    <span class="menu-price">3.50 &euro;</span>
+                  </div>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Smash burger</h4>
+                    <span class="menu-price">4.00 &euro;</span>
+                  </div>
+                </li>
+                <li class="menu-dish">
+                  <div class="menu-dish-heading">
+                    <h4 class="menu-dish-name">Chicken burger</h4>
+                    <span class="menu-price">4.00 &euro;</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <a class="menu-sheet" href="./assets/images/Fleta4.jpeg" target="_blank" rel="noopener"
+              aria-label="Open the original burgers menu at full size">
+              <img src="./assets/images/Fleta4.jpeg" width="1290" height="2298" loading="lazy"
+                alt="MODO printed burgers menu with prices in euros">
+              <span>Printed menu <ion-icon name="open-outline" aria-hidden="true"></ion-icon></span>
+            </a>
+          </div>
 
         </div>
       </section>
