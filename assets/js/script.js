@@ -1,5 +1,20 @@
 'use strict';
 
+// Start each visit at the hero instead of a saved scroll position or section link.
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
+
+if (window.location.hash) {
+  const launchUrl = new URL(window.location.href);
+  launchUrl.hash = "";
+  window.history.replaceState(window.history.state, "", launchUrl);
+}
+
+window.addEventListener("pageshow", function () {
+  window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+});
+
 
 
 /**
